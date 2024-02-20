@@ -2,8 +2,8 @@
   "name": "@al-mabsut/nodejs-lts-version",
   "version": "1.0.0",
   "lts": {
-    "docker": "1",
-    "nodejs.org": "2"
+    "docker": "20.11.1",
+    "nodejs.org": "20.11.1"
   },
   "description": "Centralizes NodeJS LTS version cross project",
   "main": "index.js",

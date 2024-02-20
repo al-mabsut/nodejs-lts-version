@@ -1,10 +1,17 @@
 {
   "name": "@al-mabsut/nodejs-lts-version",
   "version": "1.0.0",
+  "lts": {
+    "docker": "20.11.1",
+    "nodejs.org": "20.11.1"
+  },
   "description": "Centralizes NodeJS LTS version cross project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update-package-lts": "./update-package-lts.sh",
+    "current-lts-docker": "jq -r '.lts.docker' package.json",
+    "current-lts-nodejs": "jq -r '.lts[\"nodejs.org\"]' package.json",
+    "official-lts-nodejs": "curl -s https://nodejs.org/dist/index.json | jq -r '[.[] | select(.lts != false)] | first | .version' | sed 's/^v//'"
   },
   "keywords": [
     "NodeJS",

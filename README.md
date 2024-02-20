@@ -28,14 +28,15 @@ This package is intended to be used in conjunction with tools like `.tool-versio
 
 ### Integration
 
-Example of updating `.tool-versions` in a CI/CD script:
+Example of updating `.tool-versions` in a script:
 
 ```bash
-NODE_VERSION=$(jq -r '.version' ./node_modules/nodejs-lts-version-manager/package.json)
-echo "nodejs $NODE_VERSION" > .tool-versions
+NODE_VERSION=$(jq -r '.lts["nodejs.org"]' ./node_modules/nodejs-lts-version-manager/package.json)
+
+npx node-lts $NODE_VERSION
 ```
 
-Ensure you have `jq` installed in your CI/CD environment for the above command to work.
+Ensure you have `jq` installed in your environment for the above command to work.
 
 ## Contributing
 

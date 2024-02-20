@@ -5,6 +5,9 @@
     "docker": "20.11.1",
     "nodejs.org": "20.11.1"
   },
+  "bin": {
+    "node-lts": "./node-lts.js"
+  },
   "description": "Centralizes NodeJS LTS version cross project",
   "main": "index.js",
   "scripts": {

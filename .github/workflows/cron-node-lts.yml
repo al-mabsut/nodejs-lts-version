@@ -14,11 +14,12 @@ jobs:
       GIT_COMMITTER_EMAIL: actions@github.com
       GIT_AUTHOR_NAME: Cron Node LTS GitHub Action
       GIT_AUTHOR_EMAIL: actions@github.com
-      GITHUB_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
 
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.AUTOMERGE_PAT }}
 
       - name: Current Package LTS Versions
         id: package_versions
@@ -55,7 +56,7 @@ jobs:
       - name: Update package.json with New LTS Versions
         if: steps.official.outputs.VERSION != steps.package_versions.outputs.NODEJS_ORG || steps.official.outputs.VERSION != steps.package_versions.outputs.DOCKER
         run: |
-          npm run update-lts -- "${{ steps.docker.outputs.VERSION }}" "${{ steps.official.outputs.VERSION }}"
+          npm run update-package-lts -- "${{ steps.docker.outputs.VERSION }}" "${{ steps.official.outputs.VERSION }}"
           git add package.json
 
           # Check if there are any changes staged for commit

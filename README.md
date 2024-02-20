@@ -15,7 +15,7 @@ This package provides a centralized way to manage and synchronize the Node.js Lo
 To add this package to your project, run:
 
 ```bash
-npm install nodejs-lts-version-manager --save-dev
+npm install @al-mabsut/nodejs-lts-version --save-dev
 ```
 
 ### Usage
@@ -25,6 +25,15 @@ This package is intended to be used in conjunction with tools like `.tool-versio
 1. **Referencing in Build Scripts**: You can reference the LTS version in your build scripts or CI/CD pipeline configuration to ensure the correct Node.js version is being used. See the "Integration" section for examples.
 
 2. **Updating `.tool-versions`**: Include a step in your CI/CD pipeline to read the version from this package's `package.json` and update the `.tool-versions` file accordingly.
+
+In total, there are two different NodeJS LTS versions that are being tracked inside our package.json file:
+
+1. LTS version as it appears at: https://nodejs.org
+2. LTS version as is reflected by `docker pull node:lts`
+
+Generally, there can be a delay of a few days between the official LTS release vs when the same is available in Docker.
+
+By using this package, it should be easier for you to automate updating your tool-versions across your different projects.
 
 ### Integration
 

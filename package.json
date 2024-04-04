@@ -2,7 +2,7 @@
   "name": "@al-mabsut/nodejs-lts-version",
   "version": "1.0.6",
   "lts": {
-    "docker": "20.12.0",
+    "docker": "20.12.1",
     "nodejs.org": "20.12.1"
   },
   "bin": {

@@ -3,7 +3,7 @@
   "version": "1.0.15",
   "lts": {
     "docker": "20.14.0",
-    "nodejs.org": "20.14.0"
+    "nodejs.org": "20.15.0"
   },
   "bin": {
     "node-lts": "./node-lts.js"

@@ -1,6 +1,6 @@
 {
   "name": "@al-mabsut/nodejs-lts-version",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "lts": {
     "docker": "20.14.0",
     "nodejs.org": "20.15.0"
